@@ -361,11 +361,8 @@ CREATE TABLE `devices` (
   `rack_size` int(11) unsigned DEFAULT NULL,
   `location` int(11) unsigned DEFAULT NULL,
   `editDate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-<<<<<<< Updated upstream
   `port_map` int(11) unsigned DEFAULT NULL,
-=======
   `type` set('ETH', 'SFP', 'SFP+', 'QSFP', 'QSFP+', 'XFP', 'RF') DEFAULT 'ETH',
->>>>>>> Stashed changes
   PRIMARY KEY (`id`),
   KEY `hostname` (`hostname`),
   KEY `location` (`location`)
