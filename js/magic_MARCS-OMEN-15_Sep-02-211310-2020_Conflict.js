@@ -183,12 +183,12 @@ $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropa
 
 /*    generate random password */
 function randomPass() {
-    var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#_-![]=~";
     var pass = "";
     var x;
     var i;
     for(x=0; x<10; x++) {
-        i = Math.floor(Math.random() * 62);
+        i = Math.floor(Math.random() * 70);
         pass += chars.charAt(i);
     }
     return pass;
@@ -1426,6 +1426,15 @@ $('#clearLogs').click(function() {
     }).fail(function(jqxhr, textStatus, errorThrown) { showError(jqxhr.statusText + "<br>Status: " + textStatus + "<br>Error: "+errorThrown); });
     return false;
 });
+//logs clear
+$('#clearChangeLogs').click(function() {
+    showSpinner();
+    $.post('app/tools/changelog/clear-logs.php', function(data) {
+        $('div.logs').html(data);
+        hideSpinner();
+    }).fail(function(jqxhr, textStatus, errorThrown) { showError(jqxhr.statusText + "<br>Status: " + textStatus + "<br>Error: "+errorThrown); });
+    return false;
+});
 
 
 // commit logs
@@ -2248,7 +2257,6 @@ $(document).on("click", ".showRackPopup", function() {
 	open_popup("400", "app/tools/racks/show-rack-popup.php", {rackid:$(this).attr('data-rackid'), deviceid:$(this).attr('data-deviceid')}, true );	return false;
 });
 
-
 /* ---- Locations ----- */
 //submit form
 $(document).on("click", "#editLocationSubmit", function() {
@@ -2267,7 +2275,6 @@ $(document).on("click", "#editPortMapSubmit", function() {
     submit_popup_data (".editPortMapResult", "app/admin/portMaps/edit-result.php", $('form#editPortMap').serialize());
     return false;
 });
-
 
 /* ---- Ports ----- */
 //load edit form

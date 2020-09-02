@@ -26,10 +26,10 @@ require('../functions/functions.php')
 	<link rel="shortcut icon" href="../css/images/favicon.ico">
 
 	<!--[if IE 6]>
-	<script src="js/dieIE.js"></script>
+	<script type="text/javascript" src="js/dieIE.js"></script>
 	<![endif]-->
 	<!--[if IE 7]>
-	<script src="js/dieIE.js"></script>
+	<script type="text/javascript" src="js/dieIE.js"></script>
 	<![endif]-->
 </head>
 

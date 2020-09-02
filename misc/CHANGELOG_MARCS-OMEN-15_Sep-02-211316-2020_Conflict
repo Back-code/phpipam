@@ -1,12 +1,30 @@
-<<<<<<< Updated upstream
 == 1.5
 
     New features:
     ------------
     + Mark subnet as isPool to allocate network and broadcast addresses;
+    + Optionally hide section subnet menus;
+    + L2 Domains user permissions;
+    + Add scanPingType=="none" option to disable scanning;
+    + Custom fields on IP request forms (#2956);
+
+    Enhancements, changes:
+    ----------------------------
+    + Improved php7.4 compatibility;
+    + SAML2
+        + php-saml updated to 3.4.1 (#3055);
+        + Removal of php-mcrypt dependancy;
+        + Drop support for idpcertfingerprint;
+        + MAP_SAML_USER and SAML_USERNAME config.php configuration moved to db;
+        + php-saml debugging set by config.php $debugging variable;
+        + Support for signed assertions;
+        + SAML usernames can be extracted from assertion attributes (#2948);
 
     Bugfixes:
     ----------------------------
+    + Fixed upgrade queries issues from 1.3.2 to 1.4;
+    + Fixed boolean printout in footer (#2625);
+    + Fixed BGP Admin isn't working (#2631);
     + do not show statistics in dashboard widget for disabled modules (#2602);
     + MySQL 8.0 compatibility. (#2646,#2239);
     + Permit non-numeric postcodes for customers (#2393);
@@ -19,37 +37,38 @@
     + Kea MAC address display issue (#2704);
     + Returned custom fields to devices table (#2572);
     + Invalid scan agent key warning;
+    + Subnet filter issue when IP contains 0 octet. (#2748);
+    + Add VLAN button not working (#2741);
+    + Incorrect subnet links in /tools/vrf/ view. (#2774);
+    + Location data missing in exports. (#2833);
+    + Check mysqldump path when exporting database;
+    + Current rack position missing when editing a device. (#2545);
+    + Permit colon in firewall zone interface names (#2737);
+    + Fixed PowerDNS txt SPF editing (#1641);
+    + Blank 'MAC' on SNMP-ARP and SNMP-MAC scans (#2911);
+    + Incorrect network/broadcast calculation for IPv6 (#2879);
+    + Increase allowed email and password lengths (#3021);
+    + Wrong unit location for dual-sided racks (#3086);
+    + Linked ip_addr shows integer notation (#3100);
     + API:
         + Fixed /user/ calls for SSL with app code (static app code);
+        + Address IP field not displayed when using filter_by (#2934);
+        + Addresses first_free & Subnets first/last_subnet thread safety (#2960);
 
     Security Fixes:
     ----------------------------
     + SQL injections processing `tableName` (#2738);
     + SQL injections processing `ftype` (#2751);
+    + All circuits map, PHP object injection (#2937);
+    + Upgraded jQuery to 3.5.1 (#3119);
 
     Translations:
     ----------------------------
     + Update Traditional Chinese support to version 1.5 (#2658);
     + Update Simplified Chinese Translation (#2725);
-
-== 1.4.1
-
-    Bugfixes:
-    ----------------------------
-    + Fixed upgrade queries issues from 1.3.2 to 1.4;
-    + Fixed boolean printout in footer (#2625);
-    + Fixed BGP Admin isn't working (#2631);
-
-=======
-== 1.4.1
-
-    Bugfixes:
-    ----------------------------
-    + Fixed upgrade queries issues from 1.3.2 to 1.4;
-    + Fixed boolean printout in footer (#2625);
-    + Fixed BGP Admin isn't working (#2631);
-
->>>>>>> Stashed changes
+    + Italian (it_IT) translation added (#2813);
+    + Updated German translation (#2970, #3065);
+    + Updated Russian translation (#3028);
 
 == 1.4
 
